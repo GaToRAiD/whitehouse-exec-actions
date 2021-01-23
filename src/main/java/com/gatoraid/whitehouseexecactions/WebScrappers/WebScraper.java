@@ -1,17 +1,19 @@
 package com.gatoraid.whitehouseexecactions.WebScrappers;
 
-import com.sun.webkit.WebPage;
+
 import org.jsoup.Connection;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.util.HashMap;
-import java.util.List;
 
+@Component
 public class WebScraper {
 
     private String webURL;
@@ -21,9 +23,7 @@ public class WebScraper {
     private Elements elements;
     private HashMap<String, String> diffArticles = new HashMap<String, String>();
     private String redirectURL;
-
-    public WebScraper() {
-    }
+    private String className;
 
     public void getWebURL() {
         System.out.println(webURL);
@@ -33,13 +33,20 @@ public class WebScraper {
         this.webURL = webURL;
     }
 
+    public void setClassName(String className){
+        this.className = className;
+    }
+
     public Document getWebReturn() throws IOException {
         try {
             Connection.Response response = Jsoup.connect(this.webURL).followRedirects(false).execute();
             if (response.hasHeader("location")){
+                System.out.println(response.header("location"));
                 redirectURL = response.header("location");
-                System.out.println(redirectURL);
                 this.webURL = redirectURL;
+            }
+            if(response.statusCode() == 404){
+                WebPage = null;
             }
 
             WebPage = Jsoup.connect(this.webURL).get();
@@ -51,7 +58,6 @@ public class WebScraper {
         }
         return WebPage;
     }
-
 
     public Element getArticleLink(Element link){
         return link.select("a").first();
@@ -71,7 +77,7 @@ public class WebScraper {
     }
 
     public HashMap<String, String> getElements() {
-        elements = WebPage.getElementsByClass("presidential-action__title");
+        elements = WebPage.getElementsByClass(className);
         for (Element element : elements) {
             Element article = getArticleLink(element);
             if(article == null){
@@ -85,27 +91,6 @@ public class WebScraper {
             }
         }
         return articles;
-    }
-
-//    public Map<String, MapDifference.ValueDifference<String>> compareArticles() throws IOException {
-//        HashMap<String, String> currentArticles = articles;
-//        getWebReturn();
-//        //HashMap<String, String> newArticles = getArticles();
-//        MapDifference<String, String> mapDifference = Maps.difference(currentArticles, newArticles);
-//        Map<String, MapDifference.ValueDifference<String>> entriesDiffernt = mapDifference.entriesDiffering();
-//        if(entriesDiffernt.isEmpty()){
-//            System.out.println("There are no updates");
-//        } else {
-//            return entriesDiffernt;
-//        }
-//        return null;
-//    }
-
-
-    public WebScraper(String webURL, String webReturn, List<String> articles) {
-        this.webURL = webURL;
-        this.webReturn = webReturn;
-        this.articles = (HashMap<String, String>) articles;
     }
 
 }

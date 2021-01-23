@@ -1,33 +1,40 @@
 package com.gatoraid.whitehouseexecactions;
 
-import com.gatoraid.whitehouseexecactions.WebScrappers.WhiteHouseScraper;
-import com.gatoraid.whitehouseexecactions.dao.WhiteHouseDAO;
-import com.gatoraid.whitehouseexecactions.dao.WhiteHouseDAOImpl;
-import com.gatoraid.whitehouseexecactions.entity.WhiteHouse;
+import com.gatoraid.whitehouseexecactions.WebScrappers.BidenScraper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ImportResource;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+import static java.lang.System.exit;
 
 import java.io.IOException;
 
 @SpringBootApplication
-public class WhitehouseExecActionsApplication {
-
-    private static WhiteHouseDAO whiteHouseDAO;
+@EnableScheduling
+public class WhitehouseExecActionsApplication implements CommandLineRunner {
 
     @Autowired
-    public WhitehouseExecActionsApplication(WhiteHouseDAO thewhiteHouseDAO){
-        whiteHouseDAO = thewhiteHouseDAO;
-    }
+    private BidenScraper bidenScraper;
 
     public static void main(String[] args) throws IOException {
-          SpringApplication.run(WhitehouseExecActionsApplication.class, args);
-        System.out.println("Calling WhiteHouseScraper");
-        WhiteHouseScraper whs = new WhiteHouseScraper(whiteHouseDAO);
-        whs.getAllPages();
+        SpringApplication app = new SpringApplication(WhitehouseExecActionsApplication.class);
+        app.setBannerMode(Banner.Mode.OFF);
+        app.run(args);
     }
 
+    @Override
+    public void run(String... args) throws Exception {
+        bidenScraper.setUrl();
+        bidenScraper.setClassname();
+        bidenScraper.getAllPages();
+
+//        while (true){
+//            bidenScraper.checkForUpdate();
+//            Thread.sleep(4 * 60 * 60 * 1000);
+//        }
+
+    }
 }

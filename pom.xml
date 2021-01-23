@@ -12,6 +12,7 @@
     <artifactId>whitehouse-exec-actions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>whitehouse-exec-actions</name>
+    <packaging>jar</packaging>
     <description>Discord bot to search and notifiy on White House executive actions</description>
 
     <properties>
@@ -67,10 +68,6 @@
             <groupId>com.mchange</groupId>
             <artifactId>mchange-commons-java</artifactId>
             <version>0.2.19</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
         </dependency>
         <dependency>
             <groupId>org.jsoup</groupId>

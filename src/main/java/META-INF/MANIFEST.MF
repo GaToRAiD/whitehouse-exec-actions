@@ -1,0 +1,47 @@
+Manifest-Version: 1.0
+Main-Class: com.gatoraid.whitehouseexecactions.WhitehouseExecActionsAppl
+ ication
+Class-Path: jakarta.annotation-api-1.3.5.jar mchange-commons-java-0.2.19
+ .jar spring-data-jpa-2.4.3.jar log4j-to-slf4j-2.13.3.jar spring-boot-au
+ toconfigure-2.4.2.jar reactor-netty-core-1.0.3.jar jakarta.persistence-
+ api-2.2.3.jar failureaccess-1.0.1.jar hibernate-core-5.4.27.Final.jar l
+ istenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar reactive-
+ streams-1.0.3.jar netty-resolver-dns-4.1.58.Final.jar discord4j-gateway
+ -3.2.0-M1.jar discord4j-common-3.2.0-M1.jar jackson-databind-2.11.4.jar
+  spring-context-5.3.3.jar dom4j-2.1.3.jar jackson-annotations-2.11.4.ja
+ r spring-core-5.3.3.jar netty-transport-4.1.58.Final.jar netty-resolver
+ -dns-native-macos-4.1.58.Final-osx-x86_64.jar aspectjweaver-1.9.6.jar l
+ og4j-api-2.13.3.jar discord4j-core-3.2.0-M1.jar zipkin-reporter-2.16.3.
+ jar mysql-connector-java-8.0.22.jar netty-handler-proxy-4.1.58.Final.ja
+ r jsr305-3.0.2.jar slf4j-api-1.7.30.jar reactor-netty-http-brave-1.0.3.
+ jar spring-boot-starter-aop-2.4.2.jar guava-30.1-jre.jar spring-boot-2.
+ 4.2.jar snakeyaml-1.27.jar discord-json-api-1.6.0.jar spring-orm-5.3.3.
+ jar reactor-core-3.4.2.jar error_prone_annotations-2.3.4.jar logback-co
+ re-1.2.3.jar c3p0-0.9.5.5.jar discord4j-voice-3.2.0-M1.jar classmate-1.
+ 5.1.jar jakarta.activation-1.2.2.jar spring-jcl-5.3.3.jar netty-codec-s
+ ocks-4.1.58.Final.jar jakarta.transaction-api-1.3.3.jar spring-boot-sta
+ rter-2.4.2.jar stores-jdk-3.1.4.jar netty-codec-dns-4.1.58.Final.jar sp
+ ring-boot-starter-data-jdbc-2.4.2.jar netty-codec-4.1.58.Final.jar spri
+ ng-jdbc-5.3.3.jar istack-commons-runtime-3.0.11.jar j2objc-annotations-
+ 1.3.jar spring-boot-devtools-2.4.2.jar netty-codec-http-4.1.58.Final.ja
+ r HikariCP-3.4.5.jar spring-aop-5.3.3.jar spring-boot-starter-logging-2
+ .4.2.jar spring-data-relational-2.1.3.jar jboss-logging-3.4.1.Final.jar
+  antlr-2.7.7.jar spring-beans-5.3.3.jar spring-aspects-5.3.3.jar checke
+ r-qual-3.5.0.jar spring-tx-5.3.3.jar reactor-netty-1.0.3.jar jaxb-runti
+ me-2.3.3.jar jackson-datatype-jdk8-2.11.4.jar hibernate-commons-annotat
+ ions-5.1.2.Final.jar spring-data-jdbc-2.1.3.jar discord4j-rest-3.2.0-M1
+ .jar simple-fsm-1.0.1.jar netty-transport-native-unix-common-4.1.58.Fin
+ al.jar logback-classic-1.2.3.jar brave-instrumentation-http-5.13.3.jar 
+ spring-boot-starter-data-jpa-2.4.2.jar javassist-3.27.0-GA.jar netty-co
+ dec-http2-4.1.58.Final.jar reactor-netty-http-1.0.3.jar Servicer-1.0.3.
+ jar spring-boot-configuration-processor-2.4.2.jar zipkin-reporter-brave
+ -2.16.3.jar jackson-core-2.11.4.jar lombok-1.18.16.jar jul-to-slf4j-1.7
+ .30.jar brave-5.13.3.jar reactor-extra-3.4.2.jar jakarta.activation-api
+ -1.2.2.jar jakarta.xml.bind-api-2.3.3.jar spring-expression-5.3.3.jar j
+ andex-2.1.3.Final.jar netty-buffer-4.1.58.Final.jar netty-transport-nat
+ ive-epoll-4.1.58.Final-linux-x86_64.jar zipkin-2.23.2.jar netty-common-
+ 4.1.58.Final.jar jsoup-1.11.3.jar spring-boot-starter-jdbc-2.4.2.jar di
+ scord-json-1.6.0.jar txw2-2.3.3.jar netty-handler-4.1.58.Final.jar nett
+ y-resolver-4.1.58.Final.jar stores-api-3.1.4.jar spring-data-commons-2.
+ 4.3.jar byte-buddy-1.10.19.jar
+

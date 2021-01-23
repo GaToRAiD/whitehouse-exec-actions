@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "biden.url",
+      "type": "java.lang.String",
+      "description": "Description for biden.url."
+    },
+    {
+      "name": "biden.classname",
+      "type": "java.lang.String",
+      "description": "Description for biden.classname."
+    }
+  ]
+}

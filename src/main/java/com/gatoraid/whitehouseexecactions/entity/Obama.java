@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="whitehouse")
-public class WhiteHouse implements Serializable {
+@Table(name="obama")
+public class Obama implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -17,11 +17,11 @@ public class WhiteHouse implements Serializable {
     @Column(name="link")
     private String link;
 
-        public WhiteHouse() {
+    public Obama() {
 
     }
 
-    public WhiteHouse(String text, String link) {
+    public Obama(String text, String link) {
         this.text = text;
         this.link = link;
     }
@@ -52,7 +52,7 @@ public class WhiteHouse implements Serializable {
 
     @Override
     public String toString() {
-        return "WhiteHouse{" +
+        return "Obama{" +
                 "id=" + id +
                 ", text='" + text + '\'' +
                 ", link='" + link + '\'' +

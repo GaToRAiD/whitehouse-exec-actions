@@ -1,6 +1,6 @@
 package com.gatoraid.whitehouseexecactions.dao;
 
-import com.gatoraid.whitehouseexecactions.entity.WhiteHouse;
+import com.gatoraid.whitehouseexecactions.entity.Biden;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,45 +11,45 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-public class WhiteHouseDAOImpl implements WhiteHouseDAO{
+public class BidenDAOImpl implements BidenDAO {
 
     private EntityManager entityManager;
 
     @Autowired
-    public WhiteHouseDAOImpl(EntityManager theEntityManager){
+    public BidenDAOImpl(EntityManager theEntityManager){
         entityManager = theEntityManager;
     }
 
 
     @Override
     @Transactional
-    public List<WhiteHouse> GetAllItems() {
+    public List<Biden> GetAllItems() {
         Session currentSession = entityManager.unwrap(Session.class);
-        Query<WhiteHouse> whiteHouseQuery=
-                currentSession.createQuery("from WhiteHouse", WhiteHouse.class);
-        List<WhiteHouse> whiteHouses = whiteHouseQuery.getResultList();
-        return whiteHouses;
+        Query<Biden> whiteHouseQuery=
+                currentSession.createQuery("from Biden", Biden.class);
+        List<Biden> bidens = whiteHouseQuery.getResultList();
+        return bidens;
     }
 
     @Override
     @Transactional
-    public void saveItem(WhiteHouse theWhiteHouse) {
+    public void saveItem(Biden theBiden) {
         // get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
         // save items
-        currentSession.saveOrUpdate(theWhiteHouse);
+        currentSession.saveOrUpdate(theBiden);
 
     }
 
     @Override
     @Transactional
-    public List<WhiteHouse> GetItem(WhiteHouse theWhiteHouse) {
+    public List<Biden> GetItem(Biden theBiden) {
         // get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
-        Query<WhiteHouse> whiteHouseQuery =
-                currentSession.createQuery("from WhiteHouse s where s.text=:i").setParameter("i", theWhiteHouse.getText());
+        Query<Biden> bidenQuery =
+                currentSession.createQuery("from Biden s where s.text=:i").setParameter("i", theBiden.getText());
         // get the item
-        List<WhiteHouse> article = whiteHouseQuery.getResultList();
+        List<Biden> article = bidenQuery.getResultList();
         return article;
 
     }
